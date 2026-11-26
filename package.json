@@ -1,5 +1,6 @@
 {
   "name": "termalin-mcp",
+  "mcpName": "in.termal/termalin-web",
   "version": "0.1.1",
   "description": "SSH MCP server for AI agents, as a stdio bridge to Termalin's hosted MCP: run commands, read and write files, query databases and read metrics on your own servers without handing the agent an SSH key.",
   "license": "MIT",
