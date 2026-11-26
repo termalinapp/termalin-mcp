@@ -12,12 +12,12 @@ If your client already supports remote MCP servers over HTTP, you do not need th
 2. Create an API key in the cabinet under **AI access → API keys**. Choose which servers the key may reach and what it may run (full, allowlist or read-only), and give it an expiry.
 3. Put the key in the `TERMALIN_API_KEY` environment variable of your MCP client (see the snippets below). The key goes in the environment, never on the command line.
 
-Node.js 18 or newer is required.
+Node.js 18 or newer is required. The snippets install straight from this repository; an npm package name will follow.
 
 ## Claude Code
 
 ```bash
-claude mcp add termalin -e TERMALIN_API_KEY=tk_live_… -- npx -y termalin-mcp
+claude mcp add termalin -e TERMALIN_API_KEY=tk_live_… -- npx -y github:termalinapp/termalin-mcp
 ```
 
 Or, without this bridge, over HTTP with a sign-in:
@@ -35,7 +35,7 @@ Any client that takes a `mcpServers` JSON block:
   "mcpServers": {
     "termalin": {
       "command": "npx",
-      "args": ["-y", "termalin-mcp"],
+      "args": ["-y", "github:termalinapp/termalin-mcp"],
       "env": { "TERMALIN_API_KEY": "tk_live_…" }
     }
   }
@@ -47,7 +47,7 @@ Codex CLI (`~/.codex/config.toml`):
 ```toml
 [mcp_servers.termalin]
 command = "npx"
-args = ["-y", "termalin-mcp"]
+args = ["-y", "github:termalinapp/termalin-mcp"]
 env = { TERMALIN_API_KEY = "tk_live_…" }
 ```
 
