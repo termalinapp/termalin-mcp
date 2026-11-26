@@ -1,5 +1,7 @@
 # termalin-mcp
 
+[![termalinapp/termalin-mcp MCP server](https://glama.ai/mcp/servers/termalinapp/termalin-mcp/badges/score.svg)](https://glama.ai/mcp/servers/termalinapp/termalin-mcp)
+
 An SSH MCP server for AI agents, packaged as a small stdio bridge. Point Claude Code, Cursor, Codex, Windsurf, Claude Desktop or any other MCP client at it, and the agent can run commands, read and write files, query databases and read metrics on your own servers through [Termalin](https://termal.in/mcp/). The agent never receives an SSH key: each server is reached through a Termalin Connector with a short-lived certificate, under the rules you set for that key or app (full, allowlist or read-only), and every command is logged.
 
 The bridge itself is about 150 lines of JavaScript with no dependencies. It reads JSON-RPC messages from stdin, posts each one to `https://termal.in/api/v1/mcp` with your API key, and writes the reply back to stdout. Long commands arrive as an event stream and are passed through as they come. Nothing is interpreted, cached or stored on the way.
